@@ -1,0 +1,14 @@
+type Song {
+publicId: ID!,
+title: String,
+writer: String
+}
+type Query {
+songs(size: Int!):[Song]
+song(publicId: ID!):Song
+}
+type Mutation {
+createSong(title: String!, writer: String!):Song
+updateSong(publicId: ID!, title: String!, writer: String!):Song
+deleteSong(publicId: ID!): ID
+}
